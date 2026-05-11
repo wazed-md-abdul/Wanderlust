@@ -12,7 +12,7 @@ const Navbar = () => {
                     <li>
                         <Link
                             href="/"
-                            className="transition hover:text-blue-600"
+                            className="transition hover:text-cyan-500"
                         >
                             Home
                         </Link>
@@ -21,7 +21,7 @@ const Navbar = () => {
                     <li>
                         <Link
                             href="/destinations"
-                            className="transition hover:text-blue-600"
+                            className="transition hover:text-cyan-500"
                         >
                             Destinations
                         </Link>
@@ -30,7 +30,7 @@ const Navbar = () => {
                     <li>
                         <Link
                             href="/my-bookings"
-                            className="transition hover:text-blue-600"
+                            className="transition hover:text-cyan-500"
                         >
                             My Bookings
                         </Link>
@@ -55,7 +55,7 @@ const Navbar = () => {
                     <li>
                         <Link
                             href="/profile"
-                            className="rounded-full px-4 py-2 text-sm font-medium text-gray-700 transition hover:bg-gray-100"
+                            className=" px-4 py-2 text-sm font-medium text-gray-700 transition hover:bg-gray-100"
                         >
                             Profile
                         </Link>
@@ -64,7 +64,7 @@ const Navbar = () => {
                     <li>
                         <Link
                             href="/login"
-                            className="rounded-full border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 transition hover:bg-gray-100"
+                            className=" border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 transition hover:bg-gray-100"
                         >
                             Login
                         </Link>
@@ -73,7 +73,7 @@ const Navbar = () => {
                     <li>
                         <Link
                             href="/signup"
-                            className="rounded-full bg-blue-600 px-5 py-2 text-sm font-semibold text-white shadow-md transition hover:bg-blue-700 hover:shadow-lg"
+                            className=" bg-cyan-500 px-5 py-2 text-sm font-semibold text-white shadow-md transition hover:bg-blue-700 hover:shadow-lg"
                         >
                             Sign Up
                         </Link>

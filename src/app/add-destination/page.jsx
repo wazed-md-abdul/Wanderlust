@@ -36,7 +36,7 @@ const AddDestinationPage = () => {
               <div className="md:col-span-2">
                 <TextField name="destinationName" isRequired>
                   <Label>Destination Name</Label>
-                  <Input placeholder="Bali Paradise" className="rounded-2xl" />
+                  <Input placeholder="Bali Paradise" className="" />
                   <FieldError />
                 </TextField>
               </div>
@@ -44,7 +44,7 @@ const AddDestinationPage = () => {
               {/* Country */}
               <TextField name="country" isRequired>
                 <Label>Country</Label>
-                <Input placeholder="Indonesia" className="rounded-2xl" />
+                <Input placeholder="Indonesia" className="" />
                 <FieldError />
               </TextField>
 
@@ -57,7 +57,7 @@ const AddDestinationPage = () => {
                   placeholder="Select category"
                 >
                   <Label>Category</Label>
-                  <Select.Trigger className="rounded-2xl">
+                  <Select.Trigger className="">
                     <Select.Value />
                     <Select.Indicator />
                   </Select.Trigger>
@@ -98,7 +98,7 @@ const AddDestinationPage = () => {
                 <Input
                   type="number"
                   placeholder="1299"
-                  className="rounded-2xl"
+                  className=""
                 />
                 <FieldError />
               </TextField>
@@ -108,7 +108,7 @@ const AddDestinationPage = () => {
                 <Label>Duration</Label>
                 <Input
                   placeholder="7 Days / 6 Nights"
-                  className="rounded-2xl"
+                  className=""
                 />
                 <FieldError />
               </TextField>
@@ -117,7 +117,7 @@ const AddDestinationPage = () => {
               <div className="md:col-span-2">
                 <TextField name="departureDate" type="date" isRequired>
                   <Label>Departure Date</Label>
-                  <Input type="date" className="rounded-2xl" />
+                  <Input type="date" className="" />
                   <FieldError />
                 </TextField>
               </div>
@@ -129,7 +129,7 @@ const AddDestinationPage = () => {
                   <Input
                     type="url"
                     placeholder="https://example.com/bali-paradise.jpg"
-                    className="rounded-2xl"
+                    className=""
                   />
                   <FieldError />
                 </TextField>
@@ -141,7 +141,7 @@ const AddDestinationPage = () => {
                   <Label>Description</Label>
                   <TextArea
                     placeholder="Describe the travel experience..."
-                    className="rounded-3xl"
+                    className="-3xl"
                   />
                   <FieldError />
                 </TextField>
@@ -154,7 +154,7 @@ const AddDestinationPage = () => {
               type="submit"
               variant="outline"
               isLoading={isPending}
-              className=" rounded-none w-full bg-cyan-500 text-white"
+              className=" -none w-full bg-cyan-500 text-white"
             >
               {isPending ? "Adding Package..." : "Add Destination"}
             </Button>

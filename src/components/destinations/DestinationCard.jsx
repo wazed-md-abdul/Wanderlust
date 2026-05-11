@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
 const unsplashLoader = ({ src, width, quality }) => {
@@ -23,7 +24,7 @@ const DestinationCard = ({ destination }) => {
     } = destination;
 
     return (
-        <div className="group overflow-hidden rounded-2xl bg-white shadow-md transition hover:-translate-y-1 hover:shadow-xl">
+        <div className="group overflow-hidden  bg-white shadow-md transition hover:-translate-y-1 hover:shadow-xl">
             
             {/* Image */}
             <div className="relative h-60 w-full overflow-hidden">
@@ -37,7 +38,7 @@ const DestinationCard = ({ destination }) => {
                 />
 
                 {/* Price Badge */}
-                <div className="absolute right-4 top-4 rounded-full bg-white px-4 py-1 text-sm font-semibold text-blue-600 shadow">
+                <div className="absolute right-4 top-4  bg-white px-4 py-1 text-sm font-semibold text-cyan-500 shadow">
                     ${price}
                 </div>
             </div>
@@ -50,7 +51,7 @@ const DestinationCard = ({ destination }) => {
                         {destinationName}
                     </h2>
 
-                    <span className="rounded-full bg-blue-100 px-3 py-1 text-xs font-medium text-blue-600">
+                    <span className=" bg-blue-100 px-3 py-1 text-xs font-medium text-cyan-500">
                         {duration}
                     </span>
                 </div>
@@ -64,9 +65,13 @@ const DestinationCard = ({ destination }) => {
                 </p>
 
                 {/* Button */}
-                <button className="mt-3 w-full rounded-xl bg-blue-600 py-2 font-medium text-white transition hover:bg-blue-700">
-                    Explore Now
-                </button>
+                <Link
+                    href={`/destinations/${destination._id}`}
+                >
+                <button className="mt-3 w-full  bg-cyan-500 py-2 font-medium text-white transition hover:bg-blue-700">
+              Book Now
+                </button> 
+                    </Link>
             </div>
         </div>
     );
