@@ -24,12 +24,13 @@ const DestinationCard = ({ destination }) => {
     } = destination;
 
     return (
-        <div className="group overflow-hidden  bg-white shadow-md transition hover:-translate-y-1 hover:shadow-xl">
+        <div className="group bg-white shadow-md transition hover:-translate-y-1 hover:shadow-xl overflow-hidden  ">
+
             
             {/* Image */}
             <div className="relative h-60 w-full overflow-hidden">
                 <Image
-                    loader={imageUrl.startsWith('https://images.unsplash.com/') ? unsplashLoader : undefined}
+                    loader={imageUrl.startsWith('https:') ? unsplashLoader : undefined}
                     src={imageUrl}
                     alt={destinationName}
                     fill

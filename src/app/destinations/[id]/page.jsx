@@ -1,4 +1,5 @@
 
+import { EditModal } from '@/components/destinations/EditModal';
 import ImageComponent from '@/components/destinations/Image';
 import Image from 'next/image';
 import React from 'react';
@@ -19,6 +20,9 @@ const DestinationDetailsPage = async ({ params }) => {
 
     return (
         <>
+        <div className='container mx-auto flex justify-end mt-12'> 
+               <EditModal  destination={destination}/>
+            </div>
             <div className="mx-auto max-w-6xl overflow-hidden -3xl bg-white shadow-xl my-7">
 
                 {/* Hero Image */}

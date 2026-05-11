@@ -43,9 +43,10 @@ const Navbar = () => {
                         <Image
                             src="/assets/Wanderlast.png"
                             alt="Logo"
-                            width={140}
-                            height={140}
-                            className="h-auto object-contain"
+                            className='w-auto h-auto'
+                            width={100}
+                            height={100}
+                            loading="eager"
                         />
                     </Link>
                 </div>
