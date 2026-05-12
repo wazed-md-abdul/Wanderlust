@@ -1,5 +1,6 @@
 import React from 'react';
 import { Avatar } from '@heroui/react';
+import { DeleteAlertForMyBookings } from './DeleteAlertForMyBookings';
 
 const MyBookingCard = ({data}) => {
 console.log(data);
@@ -90,13 +91,9 @@ console.log(data);
             {/* Buttons */}
             <div className="flex flex-col gap-4 p-6 pt-0 md:flex-row">
 
-                <button className="flex-1 rounded-2xl bg-cyan-500 py-3 font-semibold text-white transition hover:bg-cyan-600">
-                    View Booking
-                </button>
+    
 
-                <button className="flex-1 rounded-2xl border border-red-500 py-3 font-semibold text-red-400 transition hover:bg-red-500 hover:text-white">
-                    Cancel Booking
-                </button>
+               <DeleteAlertForMyBookings userId={user._id} />
             </div>
         </div>
                 ))
