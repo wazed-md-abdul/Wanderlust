@@ -2,9 +2,10 @@
 
 import {AlertDialog, Button} from "@heroui/react";
 import {TrashBin} from '@gravity-ui/icons';
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 export function DeleteAlert({destination}) {
+    const router = useRouter();
     const {destinationName, _id} = destination
 
   const deleteFun = async () => {
@@ -13,8 +14,9 @@ export function DeleteAlert({destination}) {
     });
     const data = await res.json();
     console.log(data);
-    // data.acknowledged && window.location.reload();
- data.acknowledged && redirect("/destinations");
+    if (data?.acknowledged) {
+      router.push("/destinations");
+    }
 
   };
 

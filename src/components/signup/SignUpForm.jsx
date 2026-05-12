@@ -3,9 +3,10 @@
 import { authClient } from "@/lib/auth-client";
 import { Check } from "@gravity-ui/icons";
 import { Button, Description, FieldError, Form, Input, Label, Separator, TextField } from "@heroui/react";
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 export function SignUpForm() {
+    const router = useRouter();
     const onSubmit = async (e) => {
         e.preventDefault();
         const formData = Object.fromEntries(new FormData(e.target));
@@ -16,7 +17,7 @@ export function SignUpForm() {
         console.log(data, error);
         if(data)
         {
-            redirect("/");
+            router.push("/");
         }
         if(!data){
             alert(error.message)
@@ -31,7 +32,7 @@ export function SignUpForm() {
         )
         if(data)
         {
-            redirect("/");
+            router.push("/");
         }
         if(!data){
             alert(error.message)
@@ -77,7 +78,7 @@ export function SignUpForm() {
           
             <TextField
                 isRequired
-                name="imageUrl"
+                name="image"
                 type="text"
                 
             >

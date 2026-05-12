@@ -136,7 +136,7 @@ const AddDestinationPage = () => {
 
             {/* Image URL - Removed preview */}
             <div className="md:col-span-2">
-              <TextField name="imageUrl" isRequired>
+              <TextField name="image" isRequired>
                 <Label>Image URL</Label>
                 <Input
                   type="url"

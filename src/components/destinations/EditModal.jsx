@@ -7,7 +7,7 @@ import { Toast,toast } from "@heroui/react";
 export function EditModal({destination}) {
        const {
         _id,
-        imageUrl,
+        image,
         price,
         destinationName,
         duration,
@@ -164,7 +164,7 @@ export function EditModal({destination}) {
 
                                         {/* Image URL - Removed preview */}
                                         <div className="md:col-span-2">
-                                            <TextField  defaultValue={imageUrl} name="imageUrl" isRequired>
+                                            <TextField  defaultValue={image} name="image" isRequired>
                                                 <Label>Image URL</Label>
                                                 <Input 
                                                    

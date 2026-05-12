@@ -1,4 +1,5 @@
 
+import BookNowBtn from '@/components/destinations/BookNowBtn';
 import { DeleteAlert } from '@/components/destinations/DeleteAlert';
 import { EditModal } from '@/components/destinations/EditModal';
 import ImageComponent from '@/components/destinations/Image';
@@ -11,7 +12,7 @@ const DestinationDetailsPage = async ({ params }) => {
     const res = await fetch(`http://localhost:5000/destination/${id}`);
     const destination = await res.json();
     const {
-        imageUrl,
+        image,
         price,
         destinationName,
         duration,
@@ -21,14 +22,14 @@ const DestinationDetailsPage = async ({ params }) => {
 
     return (
         <>
-        <div className='container mx-auto flex justify-end mt-12 gap-4'> 
-               <EditModal  destination={destination}/>
+            <div className='container mx-auto flex justify-end mt-12 gap-4'>
+                <EditModal destination={destination} />
                 <DeleteAlert destination={destination}> </DeleteAlert>
             </div>
             <div className="mx-auto max-w-6xl overflow-hidden -3xl bg-white shadow-xl my-7">
 
                 {/* Hero Image */}
-                <ImageComponent imageUrl={imageUrl} destinationName={destinationName} country={country} />
+                <ImageComponent image={image} destinationName={destinationName} country={country} />
                 {/* Content */}
                 <div className="grid gap-10 p-8 md:grid-cols-3">
 
@@ -112,11 +113,11 @@ const DestinationDetailsPage = async ({ params }) => {
                                     ${price}
                                 </span>
                             </div>
+                            
+                            <BookNowBtn destination={destination} />
                         </div>
 
-                        <button className="mt-8 w-full -2xl bg-cyan-500 py-3 text-lg font-semibold text-white transition hover:bg-blue-700">
-                            Book Now
-                        </button>
+
                     </div>
                 </div>
             </div>

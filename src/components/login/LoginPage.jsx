@@ -3,8 +3,9 @@ import React from 'react';
 import { authClient } from "@/lib/auth-client";
 import { Check } from "@gravity-ui/icons";
 import { Button, Description, FieldError, Form, Input, Label, Separator, TextField } from "@heroui/react";
-import { redirect } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 const LoginPageForm = () => {
+      const router = useRouter();
       const onSubmit = async (e) => {
             e.preventDefault();
             const formData = Object.fromEntries(new FormData(e.target));
@@ -15,7 +16,7 @@ const LoginPageForm = () => {
             console.log(data, error);
             if(data)
             {
-                redirect("/");
+                router.push("/");
             }
             if(!data){
                 alert(error.message)
@@ -30,7 +31,7 @@ const LoginPageForm = () => {
                 )
                 if(data)
                 {
-                    redirect("/");
+                    router.push("/");
                 }
                 if(!data){
                     alert(error.message)

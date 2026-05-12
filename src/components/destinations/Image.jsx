@@ -1,7 +1,7 @@
 "use client"
 import React from 'react';
 import Image from 'next/image';
-const ImageComponent = ({imageUrl, destinationName, country}) => {
+const ImageComponent = ({image, destinationName, country}) => {
     const unsplashLoader = ({ src, width, quality }) => {
             const url = new URL(src);
             url.searchParams.set('auto', 'format');
@@ -14,8 +14,8 @@ const ImageComponent = ({imageUrl, destinationName, country}) => {
     return (
         <div className="relative h-[400px] w-full">
                     <Image
-                        loader={imageUrl.startsWith('https:') ? unsplashLoader : undefined}
-                        src={imageUrl}
+                        loader={image.startsWith('https:') ? unsplashLoader : undefined}
+                        src={image}
                         alt={destinationName}
                         fill
 

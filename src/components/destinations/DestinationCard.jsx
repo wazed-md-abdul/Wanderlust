@@ -15,7 +15,7 @@ const unsplashLoader = ({ src, width, quality }) => {
 
 const DestinationCard = ({ destination }) => {
     const {
-        imageUrl,
+        image,
         price,
         destinationName,
         duration,
@@ -30,8 +30,8 @@ const DestinationCard = ({ destination }) => {
             {/* Image */}
             <div className="relative h-60 w-full overflow-hidden">
                 <Image
-                    loader={imageUrl.startsWith('https:') ? unsplashLoader : undefined}
-                    src={imageUrl}
+                    loader={image.startsWith('https:') ? unsplashLoader : undefined}
+                    src={image}
                     alt={destinationName}
                     fill
                     sizes="(max-width: 768px) 100vw, 25vw"
