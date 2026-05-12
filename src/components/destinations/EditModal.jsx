@@ -3,8 +3,10 @@
 import { Envelope, PencilToSquare } from "@gravity-ui/icons";
 import { FieldError, Input, Label, TextField, Select, ListBox, TextArea ,Button , Modal, Surface} from "@heroui/react";
 import { useState } from "react";
+import { Toast,toast } from "@heroui/react";
 export function EditModal({destination}) {
        const {
+        _id,
         imageUrl,
         price,
         destinationName,
@@ -19,31 +21,32 @@ export function EditModal({destination}) {
       const onSubmit = async (e) => {
         setPending(true);
         e.preventDefault();
-        // const formData = Object.fromEntries(new FormData(e.target));
-        // const res = await fetch('http://localhost:5000/destination', {
-        //   method: 'POST',
-        //   headers: {
-        //     'Content-Type': 'application/json'
-        //   },
-        //   body: JSON.stringify(formData)
+        const formData = Object.fromEntries(new FormData(e.target));
+        const res = await fetch(`http://localhost:5000/destination/${_id}`, {
+          method: 'PATCH',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(formData)
     
     
-        // })
+        })
         const data = await res.json();
         console.log(data);
         setPending(false);
-        data && toast.success("Successfully Added", {
+        data && toast.info("Successfully Edited", {
           actionProps: {
-            className: "bg-success text-success-foreground",
+            className: "bg-info text-info-foreground",
             onPress: noop,
           },
-          description: "Visit Destionations Page to see the added destination",
+          description: "Visit Destionations Page to see the Updated destination",
         })
         e.target.reset();
     
       };
     return (
         <Modal>
+                <Toast.Provider />
              <Button className={'rounded-none'} variant='outline'> <PencilToSquare className='mr-2'/>Edit</Button>
             <Modal.Backdrop>
                 <Modal.Container placement="auto">
