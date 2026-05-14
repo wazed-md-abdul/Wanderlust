@@ -30,8 +30,8 @@ const DestinationCard = ({ destination }) => {
             {/* Image */}
             <div className="relative h-60 w-full overflow-hidden">
                 <Image
-                    loader={image.startsWith('https:') ? unsplashLoader : undefined}
-                    src={image}
+                    loader={typeof image === 'string' && image.startsWith('https:') ? unsplashLoader : undefined}
+                    src={image ?? '/assets/Wanderlast.png'}
                     alt={destinationName}
                     fill
                     sizes="(max-width: 768px) 100vw, 25vw"

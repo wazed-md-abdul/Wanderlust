@@ -14,8 +14,8 @@ const ImageComponent = ({image, destinationName, country}) => {
     return (
         <div className="relative h-[400px] w-full">
                     <Image
-                        loader={image.startsWith('https:') ? unsplashLoader : undefined}
-                        src={image}
+                        loader={typeof image === 'string' && image.startsWith('https:') ? unsplashLoader : undefined}
+                        src={image ?? '/assets/Wanderlast.png'}
                         alt={destinationName}
                         fill
 
