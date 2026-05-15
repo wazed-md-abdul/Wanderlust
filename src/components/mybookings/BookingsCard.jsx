@@ -14,7 +14,7 @@ const MyBookingCard = ({ data }) => {
   return (
     <>
       {data?.map((user) => (
-        <div key={user?.destinationId} className="overflow-hidden rounded-3xl border w-full border-gray-800 bg-[#111111] shadow-lg transition hover:-translate-y-1 hover:shadow-2xl">
+        <div key={user?._id} className="overflow-hidden rounded-3xl border w-full border-gray-800 bg-[#111111] shadow-lg transition hover:-translate-y-1 hover:shadow-2xl">
 
           {/* Top Section */}
           <div className="flex flex-col gap-6 p-6 md:flex-row md:items-center md:justify-between">
