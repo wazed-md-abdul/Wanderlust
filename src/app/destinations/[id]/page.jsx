@@ -3,13 +3,26 @@ import BookNowBtn from '@/components/destinations/BookNowBtn';
 import { DeleteAlert } from '@/components/destinations/DeleteAlert';
 import { EditModal } from '@/components/destinations/EditModal';
 import ImageComponent from '@/components/destinations/Image';
-import Image from 'next/image';
+import { auth } from '@/lib/auth';
+import { headers } from 'next/headers';
 import React from 'react';
 
 const DestinationDetailsPage = async ({ params }) => {
 
     const { id } = await params;
-    const res = await fetch(`http://localhost:5000/destination/${id}`);
+    const token = await auth.api.getToken({
+        headers : await headers(),
+    })
+
+ 
+
+    
+    const res = await fetch(`http://localhost:5000/destination/${id}`,{
+        method: 'GET',
+        headers: {
+            authorization: token.token
+        }
+    });
     const destination = await res.json();
     const {
         image,

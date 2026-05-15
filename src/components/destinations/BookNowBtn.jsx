@@ -5,11 +5,13 @@ import { DateField, Label } from "@heroui/react";
 import { Toast, toast } from "@heroui/react";
 import { authClient } from "@/lib/auth-client";
 const BookNowBtn = ({ destination }) => {
+    
     const { data: session } = authClient.useSession();
     const user = session?.user;
     const [departureDate, setDepartureDate] = useState(null);
     console.log(new Date(departureDate));
     const handleBooking = async () => {
+        const { data: tokenData } = await authClient.token();
         const noop = () => {};
         const BookingData = {
             userId: user?.id,
@@ -23,7 +25,8 @@ const BookNowBtn = ({ destination }) => {
         const res = await fetch('http://localhost:5000/booking', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                 authorization: tokenData.token,
             },
             body: JSON.stringify(BookingData)
         });

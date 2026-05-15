@@ -16,7 +16,7 @@ const ImageComponent = ({image, destinationName, country}) => {
                     <Image
                         loader={typeof image === 'string' && image.startsWith('https:') ? unsplashLoader : undefined}
                         src={image ?? '/assets/Wanderlast.png'}
-                        alt={destinationName}
+                        alt={destinationName ?? 'Destination'}
                         fill
 
                         className="object-cover transition duration-500 group-hover:scale-110"
