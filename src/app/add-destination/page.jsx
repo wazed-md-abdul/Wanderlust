@@ -8,9 +8,10 @@ const AddDestinationPage = () => {
   const noop = () => { };
   const onSubmit = async (e) => {
     setPending(true);
+    NEXT_PUBLIC_SERVER_URL
     e.preventDefault();
     const formData = Object.fromEntries(new FormData(e.target));
-    const res = await fetch('http://localhost:5000/destination', {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/destination`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

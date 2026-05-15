@@ -9,7 +9,7 @@ export function DeleteAlertForMyBookings({userId}) {
 
 
   const deleteFun = async () => {
-    const res = await fetch(`http://localhost:5000/booking/${userId}`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/booking/${userId}`, {
       method: "DELETE",
     });
     const data = await res.json();

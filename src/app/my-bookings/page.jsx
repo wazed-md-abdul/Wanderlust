@@ -24,7 +24,7 @@ const MyBookingPage = async () => {
         );
     }
 
-    const res = await fetch(`http://localhost:5000/booking/${user.id}`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/booking/${user.id}`, {
         headers: {
             'Content-Type': 'application/json',
             authorization: token.token
